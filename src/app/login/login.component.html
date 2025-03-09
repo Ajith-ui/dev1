@@ -1,0 +1,41 @@
+
+<div class="login-container" [@fadeIn]>
+    <mat-card>
+      <h2>Login to Your Account</h2>
+      <form (ngSubmit)="onSubmit()" #loginForm="ngForm">
+        
+        <!-- Email Input Field with validation -->
+        <mat-form-field appearance="fill">
+          <mat-label>Email</mat-label>
+          <input matInput 
+                 type="email" 
+                 [(ngModel)]="email" 
+                 name="email" 
+                 required 
+                 email  
+                 #emailField="ngModel">
+          <mat-error *ngIf="emailField.invalid && (emailField.dirty || emailField.touched)">
+            Please enter a valid email.
+          </mat-error>
+        </mat-form-field>
+  
+        <!-- Password Input Field -->
+        <mat-form-field appearance="fill">
+          <mat-label>Password</mat-label>
+          <input matInput 
+                 type="password" 
+                 [(ngModel)]="password" 
+                 name="password" 
+                 required
+                 #passwordField="ngModel">
+          <mat-error *ngIf="passwordField.invalid && (passwordField.dirty || passwordField.touched)">
+            Password is required.
+          </mat-error>
+        </mat-form-field>
+  
+        <!-- Submit Button -->
+        <button mat-raised-button color="primary" type="submit" [disabled]="loginForm.invalid">Login</button>
+      </form>
+    </mat-card>
+  </div>
+  

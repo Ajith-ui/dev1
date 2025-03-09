@@ -1,0 +1,44 @@
+<div *ngIf="selectedCar">
+  <h3>Booking Details</h3>
+  <p><strong>Car:</strong> {{ selectedCar.name }}</p>
+  <p><strong>Description:</strong> {{ selectedCar.description }}</p>
+  <p><strong>Price:</strong> ${{ selectedCar.price }}</p>
+</div>
+<mat-card>
+  <h2>Booking Confirmation</h2>
+
+  <h3>Booking Details</h3>
+  <p><strong>Departure:</strong> {{ bookingDetails.departure }}</p>
+  <p><strong>Destination:</strong> {{ bookingDetails.destination }}</p>
+  <p><strong>Date:</strong> {{ bookingDetails.date }}</p>
+  <p><strong>Time:</strong> {{ bookingDetails.time }}</p>
+
+  <h3>Customer Details</h3>
+  <p><strong>Name:</strong> {{ bookingDetails.customerName }}</p>
+  <p><strong>Contact:</strong> {{ bookingDetails.customerContact }}</p>
+  <p><strong>Email:</strong> {{ bookingDetails.customerEmail }}</p>
+
+</mat-card>
+
+<mat-card>
+    <h2>Payment Details</h2>
+    <form (ngSubmit)="onSubmit()">
+      <mat-form-field appearance="fill">
+        <mat-label>Card Number</mat-label>
+        <input matInput [(ngModel)]="cardNumber" name="cardNumber" required />
+      </mat-form-field>
+  
+      <mat-form-field appearance="fill">
+        <mat-label>Expiry Date</mat-label>
+        <input matInput type="month" [(ngModel)]="expiryDate" name="expiryDate" required />
+      </mat-form-field>
+  
+      <mat-form-field appearance="fill">
+        <mat-label>CVV</mat-label>
+        <input matInput type="number" [(ngModel)]="cvv" name="cvv" required />
+      </mat-form-field>
+  
+      <button mat-raised-button color="primary" type="submit">Pay Now</button>
+    </form>
+  </mat-card>
+  

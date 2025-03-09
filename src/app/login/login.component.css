@@ -1,0 +1,61 @@
+/* Apply background to the entire body */
+body {
+  background-image: url('https://cdn.pixelbin.io/v2/dummy-cloudname/original/erasebg_assets/feature_page/header/Car_BgWidgetImage.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+
+/* Set a test background image */
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-image: url('https://cdn.pixelbin.io/v2/dummy-cloudname/original/erasebg_assets/feature_page/header/Car_BgWidgetImage.png'); /* Test with a known image URL */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+
+/* Styling for the card */
+mat-card {
+  width: 300px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent background */
+}
+
+/* Optional: Add some animations for the login card */
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+}
+
+mat-card {
+  animation: bounce 1s ease infinite;
+}
+
+/* Form input fields */
+mat-form-field {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+/* Submit button */
+button {
+  width: 100%;
+  font-size: 16px;
+  padding: 10px;
+  margin-top: 20px;
+}
+.date{
+  color: brown;
+}

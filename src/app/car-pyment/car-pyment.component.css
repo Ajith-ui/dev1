@@ -1,0 +1,64 @@
+/* Payment Container */
+.payment-container {
+    max-width: 500px;
+    margin: 60px auto;
+    padding: 40px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  
+  /* Car Info */
+  .car-info {
+    padding: 20px;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .car-info img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+  }
+  
+  .car-info h3 {
+    margin: 10px 0;
+    font-size: 20px;
+  }
+  
+  .car-info p {
+    font-size: 16px;
+    color: #555;
+  }
+  
+  /* Customer Details Form */
+  .payment-container label {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+  }
+  
+  .payment-container input {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .payment-container button {
+    margin-top: 20px;
+    padding: 10px;
+    width: 100%;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: 0.3s;
+  }
+  
+  .payment-container button:hover {
+    background-color: #218838;
+  }
+  

@@ -1,0 +1,78 @@
+<!-- Navbar -->
+<div class="navbar">
+  <div class="company-name">
+    <span>Prathiksha Mol Travels</span>
+  </div>
+
+  <button mat-raised-button color="primary" (click)="navigateHOME()" routerLink="/home">Home</button>
+  <button mat-raised-button color="accent" routerLink="/about">About</button>
+  <button mat-raised-button color="warn" routerLink="/menu">Menu</button>
+  <button mat-raised-button color="primary" routerLink="/more">More</button>
+</div>
+<!-- @if(selectedCar){ -->
+<!-- <div class="black" (click)="open()"> -->
+<!-- <div class="payment-section"> -->
+<app-car-pyment class="Payment" *ngIf="selectedCar" [car]="selectedCar"></app-car-pyment>
+<!-- </div> -->
+<!-- </div> -->
+<!-- } -->
+
+
+<div class="dashboard">
+
+  <h2>Welcome to Car Booking</h2>
+
+  <div class="car-container" tabindex="0" (keydown)="handleArrowKeys($event)">
+    <!-- Loop through cars to display each car option (duplicated for infinite effect) -->
+    <div *ngFor="let car of cars" class="car-card-wrapper" (click)="selectCar(car)">
+      <div class="car-card">
+        <div class="car-card-inner">
+          <!-- Front of the card -->
+          <div class="car-card-front">
+            <img [src]="car.imageUrl" alt="{{car.name}}" class="car-image">
+            <h3>{{ car.name }}</h3>
+            <p>{{ car.description }}</p>
+            <p><strong>Price: ${{ car.price }}</strong></p>
+          </div>
+
+          <!-- Back of the card -->
+          <div class="car-card-back">
+            <h3>More Info</h3>
+            <p>Price: ${{ car.price }}</p>
+            <p>Description: {{ car.description }}</p>
+            <button mat-raised-button color="primary" (click)="bookCar()">Book Now</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Duplicated cars for infinite scroll -->
+    <div *ngFor="let car of cars" class="car-card-wrapper" (click)="selectCar(car)">
+      <div class="car-card">
+        <div class="car-card-inner">
+          <div class="car-card-front">
+            <img [src]="car.imageUrl" alt="{{car.name}}" class="car-image">
+            <h3>{{ car.name }}</h3>
+            <p>{{ car.description }}</p>
+            <p><strong>Price: ${{ car.price }}</strong></p>
+          </div>
+          <div class="car-card-back">
+            <h3>More Info</h3>
+            <p>Price: ${{ car.price }}</p>
+            <p>Description: {{ car.description }}</p>
+            <button mat-raised-button color="primary" (click)="bookCar()">Book Now</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Selected car details -->
+  <!-- <div *ngIf="selectedCar" class="selected-car">
+      <h3>You have selected: {{ selectedCar.name }}</h3>
+      <p>Description: {{ selectedCar.description }}</p>
+      <p>Price: ${{ selectedCar.price }}</p>
+      <button mat-raised-button color="primary" (click)="bookCar()">Confirm Booking</button>
+    </div> -->
+
+</div>

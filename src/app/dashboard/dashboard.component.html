@@ -1,0 +1,72 @@
+<!-- Navigation Bar -->
+<div class="navbar">
+  <!-- Company Name -->
+  <div class="company-name">
+    <span>Prathiksha Mol Travels</span>
+  </div>
+
+  <button mat-raised-button color="primary" (click)="navigateHOME()" routerLink="/home">Home</button>
+  <button mat-raised-button color="accent" routerLink="/about">About</button>
+  <button mat-raised-button color="warn" routerLink="/more">More</button>
+</div>
+
+
+<!-- Dashboard Card -->
+<div class="dashboard-card">
+  <h2 class="dashboard-heading">Welcome to Your Dashboard</h2>
+  
+  <!-- Buttons for Navigation -->
+  <div class="button-container">
+    <button mat-raised-button color="primary" (click)="navigateToBusLocation()">View Bus Locations</button>
+    <button mat-raised-button color="accent" (click)="navigateToBooking()">Book a Ticket</button>
+  </div>
+
+  <h3 class="available-buses-heading">Available Buses</h3>
+
+  <!-- Search Bar - Aligning to the top-right of the table -->
+  <div class="search-bar">
+    <mat-form-field appearance="fill">
+      <mat-label>Search Buses</mat-label>
+      <input matInput [(ngModel)]="searchTerm" (input)="onSearchChange()" placeholder="Search">
+    </mat-form-field>
+  </div>
+
+  <!-- Table -->
+  <table mat-table [dataSource]="filteredBuses" class="mat-elevation-z8">
+    <!-- Bus Name Column -->
+    <ng-container matColumnDef="busName">
+      <th mat-header-cell *matHeaderCellDef> Bus Name </th>
+      <td mat-cell *matCellDef="let bus">{{ bus.busName }}</td>
+    </ng-container>
+
+    <!-- From Column -->
+    <ng-container matColumnDef="from">
+      <th mat-header-cell *matHeaderCellDef> From </th>
+      <td mat-cell *matCellDef="let bus">{{ bus.from }}</td>
+    </ng-container>
+
+    <!-- To Column -->
+    <ng-container matColumnDef="to">
+      <th mat-header-cell *matHeaderCellDef> To </th>
+      <td mat-cell *matCellDef="let bus">{{ bus.to }}</td>
+    </ng-container>
+
+    <!-- Time Column -->
+    <ng-container matColumnDef="time">
+      <th mat-header-cell *matHeaderCellDef> Time </th>
+      <td mat-cell *matCellDef="let bus">{{ bus.time }}</td>
+    </ng-container>
+
+    <!-- More Options Column -->
+    <ng-container matColumnDef="moreOptions">
+      <th mat-header-cell *matHeaderCellDef> More Options </th>
+      <td mat-cell *matCellDef="let bus">
+        <button mat-raised-button color="primary" (click)="navigateToMoreOptions(bus.busName)">More</button>
+      </td>
+    </ng-container>
+
+    <!-- Table Rows -->
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+</div>

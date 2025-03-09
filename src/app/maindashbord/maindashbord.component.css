@@ -1,0 +1,138 @@
+/* Reset default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Global Body Styles */
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+  }
+  
+  /* Navbar Styling */
+  .navbar {
+    display: flex;
+    justify-content: space-between; /* Space between navbar items */
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.7); /* Transparent navbar */
+    padding: 15px;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+  }
+  
+  .company-name {
+    font-size: 24px;
+    font-weight: bold;
+    color: #4CAF50; /* Custom color for company name */
+    margin-right: auto; /* Pushes the company name to the left */
+  }
+  
+  .navbar button {
+    color: rgb(0, 0, 0);
+    font-size: 16px;
+    margin: 0 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s, transform 0.3s;
+  }
+  
+  .navbar button:hover {
+    background-color: #badef6;
+    transform: translateY(-2px);
+  }
+  
+  /* Card Layout */
+  .dashboard-card {
+    background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent background */
+    border-radius: 10px;
+    padding: 40px;
+    margin: 120px auto 20px auto; /* Adjusted to give space for the navbar */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    width: 80%;
+    max-width: 900px;
+    text-align: center;
+  }
+  
+  /* Card Slider Section */
+  .card-slider-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 30px;
+  }
+  
+  .card-slider {
+    display: flex;
+    gap: 30px;
+  }
+  
+  /* Individual Card Styling */
+  .card {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 350px; /* Larger width for the cards */
+    text-align: center;
+    padding: 20px;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .card img {
+    width: 100%;
+    height: 200px; /* Make images taller */
+    object-fit: cover; /* Ensures images fill the space without distortion */
+    border-radius: 10px;
+  }
+  
+  .card h3 {
+    margin: 15px 0;
+    font-size: 24px; /* Larger heading font */
+    font-weight: bold;
+  }
+  
+  .card p {
+    color: #777;
+    font-size: 16px; /* Increased font size for the description */
+  }
+  
+  .card button {
+    margin-top: 15px;
+    font-size: 16px;
+    padding: 10px 25px;
+    border-radius: 5px;
+  }
+  
+  /* Button Hover Effects */
+  .card button:hover {
+    background-color: #4CAF50;
+    color: white;
+    transform: translateY(-4px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
+  }
+  
+  /* Responsive Styling for Tablets */
+  @media screen and (max-width: 768px) {
+    .card-slider-container {
+      width: 90%;
+    }
+  
+    .card {
+      width: 250px; /* Smaller card width for tablets */
+    }
+  }
+  
+  /* Responsive Styling for Mobile */
+  @media screen and (max-width: 480px) {
+    .card {
+      width: 100%; /* Full width on mobile */
+    }
+  
+    .card-slider-container {
+      width: 95%;
+    }
+  }
+  

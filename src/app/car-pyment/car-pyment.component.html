@@ -1,0 +1,34 @@
+<div class="payment-container">
+    <h2>Confirm Your Booking</h2>
+  
+    <!-- Show Car Details -->
+    <div class="car-info">
+      <img [src]="car.imageUrl" alt="{{ car.name }}" class="car-image">
+      <h3>{{ car.name }}</h3>
+      <p>{{ car.description }}</p>
+      <p><strong>Price: ${{ car.price }}</strong></p>
+    </div>
+  
+    <!-- Customer Details Form -->
+    <div *ngIf="!showPayment">
+      <h3>Enter Your Details</h3>
+      <label>Name:</label>
+      <input [(ngModel)]="customerDetails.name" type="text" required />
+  
+      <label>Email:</label>
+      <input [(ngModel)]="customerDetails.email" type="email" required />
+  
+      <label>Phone:</label>
+      <input [(ngModel)]="customerDetails.phone" type="tel" required />
+  
+      <button (click)="submitDetails()">Proceed to Payment</button>
+    </div>
+  
+    <!-- Payment Option -->
+    <div *ngIf="showPayment">
+      <h3>Payment Details</h3>
+      <p>Total: ${{ car.price }}</p>
+      <button (click)="confirmPayment()">Confirm Payment</button>
+    </div>
+  </div>
+  

@@ -1,0 +1,103 @@
+/* General mat-card styling */
+mat-card {
+    max-width: 600px;
+    margin: 30px auto;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    background-color: #ffffff;
+    font-family: 'Roboto', sans-serif; /* Clean font for modern look */
+  }
+  
+  /* Card Heading Styling */
+  mat-card h2 {
+    font-size: 2rem;
+    font-weight: 600;
+    color: #3f51b5; /* Elegant color for heading */
+    text-align: center;
+    margin-bottom: 25px;
+  }
+  
+  /* Form Field Styling */
+  mat-form-field {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  
+  /* Enhanced Input Field Styling */
+  input {
+    font-size: 1rem;
+    padding: 12px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    width: 100%;
+    box-sizing: border-box;
+    transition: all 0.3s ease-in-out;
+    background-color: #f9f9f9;
+    color: #333;
+  }
+  
+  /* Focus Effect for Input Fields */
+  input:focus {
+    border-color: #3f51b5; /* Subtle blue border on focus */
+    outline: none;
+    background-color: #fff; /* Lighter background when focused */
+  }
+  
+  /* Label Styling */
+  mat-label {
+    font-size: 1rem;
+    color: #555;
+    font-weight: 500;
+  }
+  
+  /* Submit Button Styling */
+  button {
+    width: 100%;
+    padding: 14px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    border-radius: 6px;
+    background-color: #3f51b5; /* Elegant button color */
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  
+  /* Hover and Active States for Button */
+  button:hover {
+    background-color: #303f9f; /* Slightly darker blue on hover */
+    transform: translateY(-2px); /* Subtle lift effect */
+  }
+  
+  button:active {
+    background-color: #2c387e; /* Even darker shade on click */
+    transform: translateY(0); /* Button pressed effect */
+  }
+  
+  /* Responsiveness for smaller screens */
+  @media (max-width: 600px) {
+    mat-card {
+      padding: 20px;
+    }
+  
+    mat-card h2 {
+      font-size: 1.7rem; /* Slightly smaller heading on mobile */
+    }
+  
+    button {
+      font-size: 1rem;
+      padding: 12px;
+    }
+  
+    mat-form-field {
+      margin-bottom: 15px;
+    }
+  
+    input {
+      font-size: 0.95rem; /* Slightly smaller input font */
+      padding: 10px;
+    }
+  }
+  
