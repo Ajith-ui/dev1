@@ -7,12 +7,14 @@ import { BookingComponent } from './booking/booking.component';
 import { MaindashbordComponent } from './maindashbord/maindashbord.component';
 import { CarbookingComponent } from './carbooking/carbooking.component';
 import { PaymentComponent } from './payment/payment.component';
+import { ResumeComponent } from './resume/resume.component';
 
 export const routes: Routes = [
-  { path: '', redirectTo: '/login', pathMatch: 'full' }, // Default route, redirect to login
-  { path: 'login', component: LoginComponent }, // Login route
-  { path: 'dashboard', component: DashboardComponent }, // Dashboard route
-  { path: 'bus-location', component: BusLocationComponent }, // Bus location route
+  { path: '', redirectTo: '/login', pathMatch: 'full' }, 
+  { path: 'login', component: LoginComponent }, 
+  { path: 'resume', component: ResumeComponent }, 
+  { path: 'dashboard', component: DashboardComponent },
+  { path: 'bus-location', component: BusLocationComponent }, 
   { path: 'booking', component: BookingComponent }, 
   { path: 'maindashbord', component: MaindashbordComponent }, 
   { path: 'carbooking', component: CarbookingComponent }, 

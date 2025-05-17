@@ -39,7 +39,7 @@ export class LoginComponent {
   onSubmit() {
     if (this.email && this.password) {
       console.log("Login successful!");
-      this.router.navigate(['/maindashbord']);  
+      this.router.navigate(['/resume  ']);  
     }
   }
 }
