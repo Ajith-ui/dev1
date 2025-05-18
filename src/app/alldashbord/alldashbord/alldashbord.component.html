@@ -1,0 +1,100 @@
+<!-- src/app/alldashbord/alldashbord.component.html -->
+<div class="dashboard-wrapper">
+  <nav class="navbar">
+    <div class="navbar-container">
+      <div class="logo">stachbot</div>
+      <div class="nav-links">
+        <a href="#" class="nav-link">Home</a>
+        <a href="#" class="nav-link">Analytics</a>
+        <a href="#" class="nav-link">Settings</a>
+      </div>
+    </div>
+  </nav>
+
+  <div class="main-content">
+    <div class="header">
+      <h1 class="dashboard-title">Dashboard</h1>
+      <div class="metric-cards">
+        <div class="metric-card">
+          <h3>2,340</h3>
+          <p>Total Users</p>
+        </div>
+        <div class="metric-card">
+          <h3>1,782</h3>
+          <p>Active Users</p>
+        </div>
+        <div class="metric-card">
+          <h3>1,566</h3>
+          <p>New Contacts</p>
+        </div>
+      </div>
+      <button mat-raised-button color="primary" (click)="openAddContactDialog()">Add Contact</button>
+    </div>
+
+    <div class="charts-container">
+      <div class="card chart-card pie-chart">
+        <h2 class="card-title">Contact Status</h2>
+        <div class="chart-wrapper">
+          <canvas id="categoryChart"></canvas>
+        </div>
+      </div>
+      <div class="card chart-card bar-chart">
+        <h2 class="card-title">Contacts Trend</h2>
+        <div class="chart-wrapper">
+          <canvas id="trendChart"></canvas>
+        </div>
+      </div>
+    </div>
+
+    <div class="card table-card">
+      <h2 class="card-title">My Contacts</h2>
+      <div class="table-wrapper">
+        <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z2">
+          <ng-container matColumnDef="id">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>ID</th>
+            <td mat-cell *matCellDef="let contact">{{ contact.id }}</td>
+          </ng-container>
+
+          <ng-container matColumnDef="name">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Name</th>
+            <td mat-cell *matCellDef="let contact">{{ contact.name }}</td>
+          </ng-container>
+
+          <ng-container matColumnDef="email">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Email</th>
+            <td mat-cell *matCellDef="let contact">{{ contact.email }}</td>
+          </ng-container>
+
+          <ng-container matColumnDef="address">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Address</th>
+            <td mat-cell *matCellDef="let contact">{{ contact.address }}</td>
+          </ng-container>
+
+          <ng-container matColumnDef="phoneNumber">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Phone Number</th>
+            <td mat-cell *matCellDef="let contact">{{ contact.phoneNumber }}</td>
+          </ng-container>
+
+          <ng-container matColumnDef="dob">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Date of Birth</th>
+            <td mat-cell *matCellDef="let contact">{{ contact.dob | date:'shortDate' }}</td>
+          </ng-container>
+
+          <ng-container matColumnDef="sex">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Sex</th>
+            <td mat-cell *matCellDef="let contact">{{ contact.sex }}</td>
+          </ng-container>
+
+          <ng-container matColumnDef="status">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Status</th>
+            <td mat-cell *matCellDef="let contact">{{ contact.status }}</td>
+          </ng-container>
+
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+      </div>
+      <mat-paginator [pageSizeOptions]="[3, 5, 10]" [pageSize]="3" showFirstLastButtons></mat-paginator>
+    </div>
+  </div>
+</div>

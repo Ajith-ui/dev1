@@ -4,14 +4,19 @@ import { LoginComponent } from './login/login.component'; // Import your LoginCo
 import { DashboardComponent } from './dashboard/dashboard.component'; // Import your DashboardComponent
 import { BusLocationComponent } from './bus-location/bus-location.component'; // Import your BusLocationComponent
 import { BookingComponent } from './booking/booking.component'; // Import your BookingComponent
+import { ResumeComponent } from './resume/resume.component';
+import { AlldashbordComponent } from './alldashbord/alldashbord/alldashbord.component';
 
 // Define the routes for your application
 const routes: Routes = [
-  { path: '', redirectTo: '/login', pathMatch: 'full' }, // Default route, redirect to login page
-  { path: 'login', component: LoginComponent }, // Route for Login
-  { path: 'dashboard', component: DashboardComponent }, // Route for Dashboard
-  { path: 'bus-location', component: BusLocationComponent }, // Route for Bus Location
-  { path: 'booking', component: BookingComponent }, // Route for Booking
+  { path: '', redirectTo: '/login', pathMatch: 'full' }, 
+  { path: 'login', component: LoginComponent },
+  { path: 'Resume', component: ResumeComponent },
+  { path: 'Alldashbord', component: AlldashbordComponent },
+  { path: 'login', component: LoginComponent },
+  { path: 'dashboard', component: DashboardComponent },
+  { path: 'bus-location', component: BusLocationComponent },
+  { path: 'booking', component: BookingComponent }, 
 ];
 
 @NgModule({

@@ -1,0 +1,96 @@
+<!-- src/app/addpage/addpage.component.html -->
+<div class="dialog-container">
+  <h2>Add New Contact</h2>
+  <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+    <mat-form-field appearance="fill">
+      <mat-label>First Name</mat-label>
+      <input matInput formControlName="firstName" required>
+      <mat-error *ngIf="contactForm.get('firstName')?.hasError('required')">
+        First Name is required
+      </mat-error>
+      <mat-error *ngIf="contactForm.get('firstName')?.hasError('minlength')">
+        First Name must be at least 2 characters
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Last Name</mat-label>
+      <input matInput formControlName="lastName" required>
+      <mat-error *ngIf="contactForm.get('lastName')?.hasError('required')">
+        Last Name is required
+      </mat-error>
+      <mat-error *ngIf="contactForm.get('lastName')?.hasError('minlength')">
+        Last Name must be at least 2 characters
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Address</mat-label>
+      <input matInput formControlName="address" required>
+      <mat-error *ngIf="contactForm.get('address')?.hasError('required')">
+        Address is required
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Phone Number</mat-label>
+      <input matInput formControlName="phoneNumber" required>
+      <mat-error *ngIf="contactForm.get('phoneNumber')?.hasError('required')">
+        Phone Number is required
+      </mat-error>
+      <mat-error *ngIf="contactForm.get('phoneNumber')?.hasError('pattern')">
+        Enter a valid 10-digit phone number
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Date of Birth</mat-label>
+      <input matInput [matDatepicker]="picker" formControlName="dob" required>
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+      <mat-error *ngIf="contactForm.get('dob')?.hasError('required')">
+        Date of Birth is required
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Sex</mat-label>
+      <mat-select formControlName="sex" required>
+        <mat-option value="Male">Male</mat-option>
+        <mat-option value="Female">Female</mat-option>
+        <mat-option value="Other">Other</mat-option>
+      </mat-select>
+      <mat-error *ngIf="contactForm.get('sex')?.hasError('required')">
+        Sex is required
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Email</mat-label>
+      <input matInput formControlName="email" required>
+      <mat-error *ngIf="contactForm.get('email')?.hasError('required')">
+        Email is required
+      </mat-error>
+      <mat-error *ngIf="contactForm.get('email')?.hasError('email')">
+        Enter a valid email
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Status</mat-label>
+      <mat-select formControlName="status" required>
+        <mat-option value="Active">Active</mat-option>
+        <mat-option value="Inactive">Inactive</mat-option>
+        <mat-option value="Pending">Pending</mat-option>
+      </mat-select>
+      <mat-error *ngIf="contactForm.get('status')?.hasError('required')">
+        Status is required
+      </mat-error>
+    </mat-form-field>
+
+    <div class="dialog-actions">
+      <button mat-button type="button" (click)="onCancel()">Cancel</button>
+      <button mat-raised-button color="primary" type="submit" [disabled]="contactForm.invalid">Add Contact</button>
+    </div>
+  </form>
+</div>

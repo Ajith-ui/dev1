@@ -8,10 +8,12 @@ import { MaindashbordComponent } from './maindashbord/maindashbord.component';
 import { CarbookingComponent } from './carbooking/carbooking.component';
 import { PaymentComponent } from './payment/payment.component';
 import { ResumeComponent } from './resume/resume.component';
+import { AlldashbordComponent } from './alldashbord/alldashbord/alldashbord.component';
 
 export const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' }, 
   { path: 'login', component: LoginComponent }, 
+  { path: 'Alldashbord', component: AlldashbordComponent }, 
   { path: 'resume', component: ResumeComponent }, 
   { path: 'dashboard', component: DashboardComponent },
   { path: 'bus-location', component: BusLocationComponent }, 
